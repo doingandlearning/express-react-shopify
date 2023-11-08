@@ -17,6 +17,7 @@ const verifyRequest = async (req, res, next) => {
       rawResponse: res,
     });
 
+    console.log(sessionId);
     const session = await sessionHandler.loadSession(sessionId);
 
     if (

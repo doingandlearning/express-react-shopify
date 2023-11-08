@@ -6,6 +6,7 @@ import BillingAPI from "./pages/debug/Billing";
 import GetData from "./pages/debug/Data";
 import DebugIndex from "./pages/debug/Index";
 import ActiveWebhooks from "./pages/debug/Webhooks";
+import CheckoutSetup from "./pages/CheckoutSetup";
 
 const routes = {
   "/": () => <Index />,
@@ -17,6 +18,7 @@ const routes = {
   "/debug/data": () => <GetData />,
 
   //Add your routes here
+  "/checkout/setup": () => <CheckoutSetup />,
 };
 
 export default routes;

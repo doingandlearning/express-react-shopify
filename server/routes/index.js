@@ -1,5 +1,6 @@
 import { Router } from "express";
 import clientProvider from "../../utils/clientProvider.js";
+import CheckoutModel from "../../utils/models/CheckoutModel.js";
 
 const userRoutes = Router();
 
@@ -10,6 +11,51 @@ userRoutes.get("/", (req, res) => {
 
 userRoutes.post("/", (req, res) => {
   return res.status(200).json(req.body);
+});
+
+userRoutes.get("/checkout/setup", async (req, res) => {
+  const {
+    client: { session },
+  } = await clientProvider.graphqlClient({
+    req,
+    res,
+    isOnline: true,
+  });
+  console.log(session);
+
+  let checkout = await CheckoutModel.findOne({ shop: session.shop });
+
+  if (!checkout) {
+    checkout = await CheckoutModel.create({ shop: session.shop, product: "" });
+    // await checkout.save();
+  }
+
+  res.json({ product: checkout.product });
+});
+
+userRoutes.patch("/checkout/setup", async (req, res) => {
+  const {
+    client: { session },
+  } = await clientProvider.graphqlClient({
+    req,
+    res,
+    isOnline: true,
+  });
+
+  const { product } = req.body;
+  console.log(product);
+  let checkout = await CheckoutModel.findOneAndUpdate(
+    { shop: session.shop },
+    { product },
+    { new: true }
+  );
+
+  if (!checkout) {
+    checkout = await CheckoutModel.create({ shop: session.shop, product });
+    // await checkout.save();
+  }
+
+  res.json({ product: checkout.product });
 });
 
 userRoutes.get("/debug/gql", async (req, res) => {

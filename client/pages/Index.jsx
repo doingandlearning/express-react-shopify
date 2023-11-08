@@ -38,6 +38,21 @@ const HomePage = () => {
                 </InlineStack>
               </BlockStack>
             </Card>
+            <Card>
+              <BlockStack gap="200">
+                <Text as="h2" variant="headingMd">
+                  Checkout Setup
+                </Text>
+                <InlineStack wrap={false} align="end">
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      navigate("/checkout/setup");
+                    }} >Setup Checkout
+                  </Button>
+                </InlineStack>
+              </BlockStack>
+            </Card>
           </Layout.Section>
           <Layout.Section variant="oneHalf">
             <Card>

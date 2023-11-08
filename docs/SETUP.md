@@ -70,3 +70,10 @@ This is an in-depth guide on using this repo. This goes over getting the base re
   - I prefer running a local `mongod` instance to save on time and ease of setup. Create a new folder in your project called `mongo` (it's added in `.gitignore` so you can git freely) and in a terminal window run `mongod --dbpath mongo/` to start a mongo instance in that folder.
   - In your second terminal window, run `npm run ngrok` to create a ngrok instance if you haven't already.
   - In your third terminal window (preferrably in your IDE), `npm run dev` or `npm run start` depending on how you want to test your app. Make sure to add the generated URL to `SHOPIFY_APP_URL` in `.env` file.
+
+
+
+
+
+https://dd2d-149-50-165-190.ngrok-free.app/api/auth?shop=as-a-lion1.myshopify.com
+

@@ -8,7 +8,7 @@ import DebugIndex from "./pages/debug/Index";
 import ActiveWebhooks from "./pages/debug/Webhooks";
 import CheckoutSetup from "./pages/CheckoutSetup";
 import FeatureComponent from "./pages/feature/Index";
-import GraphQLData from "./pages/GraphQL";
+import GraphQLData from "./components/EnhanceDescription";
 const routes = {
   "/": () => <Index />,
   "/exitframe": () => <ExitFrame />,

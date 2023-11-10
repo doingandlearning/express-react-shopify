@@ -46,7 +46,7 @@ const HomePage = () => {
                   Building a feature
                 </Text>
                 <Text>
-                  This is where I'll build my feature. TODO: describe the feature here
+                  We'll build a feature and show good error handling practices as we do. We'll use our app to enhance the product description using OpenAI.
                 </Text>
                 <InlineStack wrap={false} align="end">
                   <Button

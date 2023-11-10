@@ -1,6 +1,6 @@
 import { Router } from "express";
 import clientProvider from "../../utils/clientProvider.js";
-
+import enhanceProductDescription from "../../utils/enhanceDescription.js";
 
 const productRoutes = Router();
 
@@ -19,7 +19,7 @@ productRoutes.get("/:id", async (req, res) => {
           product(id: $id) {
             title
             handle
-            description
+            descriptionHtml
           }
         }`,
 				variables: {
@@ -46,7 +46,7 @@ productRoutes.post("/:id/description", async (req, res) => {
 		});
 		const { description } = req.body
 
-		if (!description) {
+		if (typeof description !== 'string') {
 			return res.status(400).json({ message: "You need to provide a description." })
 		}
 		const response = await client.query({
@@ -70,12 +70,27 @@ productRoutes.post("/:id/description", async (req, res) => {
 			}
 		});
 
-		console.log(response)
 		return res.json({ data: response });
 
 	} catch (error) {
 		console.error(error)
 	}
 });
+
+productRoutes.patch("/enhance_description", async (req, res) => {
+	console.log("---> /api/apps/products/enhance_description triggered")
+	const { description, title } = req.body
+	const shopName = req.query?.shop?.split(".")[0]
+	if (typeof description !== 'string') {
+		res.status(400).send({ message: 'You need to send a description.' })
+	}
+	try {
+		// const enhancedDescription = description
+		const enhancedDescription = await enhanceProductDescription(description, title, shopName)
+		res.send({ description: enhancedDescription })
+	} catch (error) {
+		res.send({ description })
+	}
+})
 
 export default productRoutes

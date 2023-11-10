@@ -13,13 +13,13 @@ import { navigate } from "raviger";
 const HomePage = () => {
   return (
     <>
-      <Page title="Home">
+      <Page title="Error Handling with JavaScript">
         <Layout>
           <Layout.Section variant="fullWidth">
             <Card>
               <BlockStack gap="200">
                 <Text as="h2" variant="headingMd">
-                  Debug Cards
+                  Error Handling with Data
                 </Text>
                 <Text>
                   Explore how the repository handles data fetching from the
@@ -38,17 +38,79 @@ const HomePage = () => {
                 </InlineStack>
               </BlockStack>
             </Card>
+          </Layout.Section>
+          <Layout.Section variant="fullWidth">
             <Card>
               <BlockStack gap="200">
                 <Text as="h2" variant="headingMd">
-                  Checkout Setup
+                  Building a feature
+                </Text>
+                <Text>
+                  This is where I'll build my feature. TODO: describe the feature here
                 </Text>
                 <InlineStack wrap={false} align="end">
                   <Button
                     variant="primary"
                     onClick={() => {
-                      navigate("/checkout/setup");
-                    }} >Setup Checkout
+                      navigate("/feature");
+                    }}
+                  >
+                    Feature
+                  </Button>
+                </InlineStack>
+              </BlockStack>
+            </Card>
+          </Layout.Section>
+
+          <Layout.Section variant="oneHalf">
+            <Card>
+              <BlockStack gap="200">
+                <Text as="h2" variant="headingMd">
+                  Link to the course
+                </Text>
+                <Text>
+                  The purpose of this app is to help explore error handling in JavaScript. Here is a link to the relevant course.
+                </Text>
+                <InlineStack wrap={false} align="end">
+                  <Button
+                    variant="primary"
+                    external
+                    icon={ExternalMinor}
+                    onClick={() => {
+                      open(
+                        "https://egghead.io",
+                        "_blank"
+                      );
+                    }}
+                  >
+                    Explore
+                  </Button>
+                </InlineStack>
+              </BlockStack>
+            </Card>
+          </Layout.Section>
+          <Layout.Section variant="oneHalf">
+            <Card>
+              <BlockStack gap="200">
+                <Text as="h2" variant="headingMd">
+                  Repository
+                </Text>
+                <Text>
+                  The Git repository for this app.
+                </Text>
+                <InlineStack wrap={false} align="end">
+                  <Button
+                    variant="primary"
+                    external
+                    icon={ExternalMinor}
+                    onClick={() => {
+                      open(
+                        "https://shopify.dev/docs/api/app-bridge-library/reference",
+                        "_blank"
+                      );
+                    }}
+                  >
+                    Explore
                   </Button>
                 </InlineStack>
               </BlockStack>
@@ -85,7 +147,7 @@ const HomePage = () => {
             <Card>
               <BlockStack gap="200">
                 <Text as="h2" variant="headingMd">
-                  Repository
+                  Parent Repository
                 </Text>
                 <Text>
                   Found a bug? Open an issue on the repository, or star on
@@ -121,35 +183,6 @@ const HomePage = () => {
               </BlockStack>
             </Card>
           </Layout.Section>
-          <Layout.Section variant="oneHalf">
-            <Card>
-              <BlockStack gap="200">
-                <Text as="h2" variant="headingMd">
-                  Course
-                </Text>
-                <Text>
-                  [BETA] I'm building course as a live service on How To Build
-                  Shopify Apps
-                </Text>
-                <InlineStack wrap={false} align="end">
-                  <Button
-                    external
-                    variant="primary"
-                    icon={ExternalMinor}
-                    onClick={() => {
-                      open(
-                        "https://kinngh.gumroad.com/l/how-to-make-shopify-apps?utm_source=boilerplate&utm_medium=expressjs",
-                        "_blank"
-                      );
-                    }}
-                  >
-                    Buy
-                  </Button>
-                </InlineStack>
-              </BlockStack>
-            </Card>
-          </Layout.Section>
-          <Layout.Section variant="oneHalf" />
         </Layout>
       </Page>
     </>

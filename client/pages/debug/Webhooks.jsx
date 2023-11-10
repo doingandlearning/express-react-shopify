@@ -38,10 +38,20 @@ const ActiveWebhooks = () => {
   return (
     <>
       <Page
-        title="Webhooks"
+        title="Exploring Webhooks"
         backAction={{ content: "Home", onAction: () => navigate("/debug") }}
       >
         <Layout>
+
+          <Layout.Section>
+            <Card>
+              <BlockStack gap="200">
+                <Text>
+                  When working with webhooks there are many things that might go wrong. This section will explore those. Below are a list of the currently registered webhooks.
+                </Text>
+              </BlockStack>
+            </Card>
+          </Layout.Section>
           <Layout.Section>
             <Card padding="0">
               <DataTable
@@ -67,6 +77,55 @@ const ActiveWebhooks = () => {
               </BlockStack>
             </Card>
           </Layout.Section>
+          <Layout.Section variant="oneHalf">
+            <Card>
+              <BlockStack gap="200">
+                <Text as="h2" variant="headingMd">
+                  Incorrectly Register a webhook
+                </Text>
+                <Text>
+                  I'd like to put a button in here to incorrectly register the webhook
+                </Text>
+              </BlockStack>
+            </Card>
+          </Layout.Section>
+          <Layout.Section variant="oneHalf">
+            <Card>
+              <BlockStack gap="200">
+                <Text as="h2" variant="headingMd">
+                  Incorrectly Trigger a webhook
+                </Text>
+                <Text>
+                  I'd like to put a button in here to incorrectly register the webhook
+                </Text>
+              </BlockStack>
+            </Card>
+          </Layout.Section>
+          <Layout.Section variant="oneHalf">
+            <Card>
+              <BlockStack gap="200">
+                <Text as="h2" variant="headingMd">
+                  Correctly Register a webhook
+                </Text>
+                <Text>
+                  I'd like to put a button in here to incorrectly register the webhook
+                </Text>
+              </BlockStack>
+            </Card>
+          </Layout.Section>
+          <Layout.Section variant="oneHalf">
+            <Card>
+              <BlockStack gap="200">
+                <Text as="h2" variant="headingMd">
+                  Correctly Trigger a webhook
+                </Text>
+                <Text>
+                  I'd like to put a button in here to incorrectly register the webhook
+                </Text>
+              </BlockStack>
+            </Card>
+          </Layout.Section>
+
         </Layout>
       </Page>
     </>

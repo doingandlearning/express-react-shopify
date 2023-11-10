@@ -60,7 +60,7 @@ const GetData = () => {
   );
   const [responseDataGQL, fetchContentGQL] = useDataFetcher(
     "",
-    "/api/apps/debug/gql"
+    "/api/apps/products/1"
   );
 
   useEffect(() => {

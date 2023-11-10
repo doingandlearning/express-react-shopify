@@ -1,19 +1,20 @@
-# Shopify Node.js x Express.js x React.js Boilerplate
+# Shopify App Exploration for Error Handling
 
-An embedded app starter template to get up and ready with Shopify app development with JavaScript. This is heavily influenced by the choices Shopify Engineering team made in building their [starter template](https://github.com/Shopify/shopify-app-template-node) to ensure smooth transition between templates.
+This app is for exploration and is initially based on the boilerplate provided [here](https://github.com/kinngh/shopify-node-express-mongodb-app) by [kinngh](https://twitter.com/kinngh). kinngh has also been invaluable with advice and guidance as I've sought to understand this space a bit more. Give him a follow!
 
-I've included [notes](/docs/NOTES.md) on this repo which goes over the repo on why certain choices were made.
+# Aim
 
-I also did make a video going over the entire repo. If you want to learn Shopify app dev in-depth, I also sell a course _[How To Build Shopify Apps](https://kinngh.gumroad.com/l/how-to-make-shopify-apps?utm_source=github&utm_medium=express-repo)_
+The aim of this repo is to provide a working Shopify application that you can add to your own development store to help explore error handling in JavaScript.
 
-[![How To Build Shopify Apps Course](https://raw.githubusercontent.com/kinngh/extras/main/csa_promo.png)](https://kinngh.gumroad.com/l/how-to-make-shopify-apps?utm_source=github&utm_medium=express-repo)
+There are lots of ways that errors may occur and some may not be down to your code. They may instead be down to configuration problems. 
 
-[![Creating a Shopify app from scratch](https://img.youtube.com/vi/iV_3ENCraaM/0.jpg)](https://www.youtube.com/watch?v=iV_3ENCraaM)
+# Architecture
 
-## Supporting repositories
+This app is made up of two parts:
+- An Express server which can carry out authenticated operations with the Shopify API 
+- A React application that will be embedded into a Shopify store
 
-- [`@kinngh/shopify-nextjs-prisma-app`](https://github.com/kinngh/shopify-nextjs-prisma-app): A Shopify app boilerplate built with Next.js and Prisma ORM, with deployments available on Vercel.
-- [`@kinngh/shopify-polaris-playground`](https://github.com/kinngh/shopify-polaris-playground): Build your app's UI using Polaris, without an internet connection.
+During development, you will run the Express server locally and serve your React application locally. This will be exposed to the world through ngrok.
 
 ## Tech Stack
 
@@ -24,23 +25,10 @@ I also did make a video going over the entire repo. If you want to learn Shopify
 - Vite
 - Ngrok
 
-## Why I made this
+## Setup
 
-The Shopify CLI generates an amazing starter app but it still needs some more boilerplate code and customizations so I can jump on to building apps with a simple clone. This includes:
-
-- MongoDB based session and database management.
-- Monetization (recurring subscriptions) ready to go.
-- Webhooks isolated and setup.
-- React routing taken care of (I miss Next.js mostly because of routing and under the hood improvements).
-- Misc boilerplate code and templates to quickly setup inApp subscriptions, routes, webhooks and more.
-
-## Notes
-
-### Setup
-
-- Refer to [SETUP](/docs/SETUP.md)
-
-### Misc
-
-- Storing data is kept to a minimal to allow building custom models for flexibility.
-  - Session persistence is also kept to a minimal and based on the Redis example provided by Shopify, but feel free to modify as required.
+- Add all of the .env variables you can
+- Run `ngrok http 5173`
+- Copy the url that ngrok provides and add it to .env
+- Run `npm run update:url`
+- Start the app 

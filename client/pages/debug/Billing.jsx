@@ -42,6 +42,9 @@ const BillingAPI = () => {
                 Subscribe your merchant to a test $10.25 plan and redirect to
                 your home page.
               </Text>
+              <Text>
+                Note that only apps that have a public distribution can use the billing API
+              </Text>
 
               {
                 /* If we have an error, it'll pop up here. */

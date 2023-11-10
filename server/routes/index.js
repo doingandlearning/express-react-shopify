@@ -13,6 +13,7 @@ userRoutes.post("/", (req, res) => {
   return res.status(200).json(req.body);
 });
 
+
 userRoutes.get("/checkout/setup", async (req, res) => {
   const {
     client: { session },

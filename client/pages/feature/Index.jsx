@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Page, Layout, Button } from '@shopify/polaris';
 
 import { navigate } from "raviger";
-import GraphQLData from '../../components/EnhanceDescription';
+import GraphQLData from '../../components/GraphQLData';
 
 const DebugIndex = () => {
 	const [selectedItem, setSelectedItems] = useState('')

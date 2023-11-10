@@ -8,7 +8,6 @@ import DebugIndex from "./pages/debug/Index";
 import ActiveWebhooks from "./pages/debug/Webhooks";
 import CheckoutSetup from "./pages/CheckoutSetup";
 import FeatureComponent from "./pages/feature/Index";
-import GraphQLData from "./components/EnhanceDescription";
 const routes = {
   "/": () => <Index />,
   "/exitframe": () => <ExitFrame />,
@@ -17,7 +16,6 @@ const routes = {
   "/debug/webhooks": () => <ActiveWebhooks />,
   "/debug/billing": () => <BillingAPI />,
   "/debug/data": () => <GetData />,
-  "/debug/graphql": () => <GraphQLData />,
 
   //Add your routes here
   "/checkout/setup": () => <CheckoutSetup />,
